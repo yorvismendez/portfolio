@@ -10,6 +10,9 @@ $("#btnalert").on("click",function(){
 });
 
 
+document.getElementById('open_pdf').addEventListener('click', function() {
+    window.open('./files/resume.pdf', '_blank');
+  });
 
 
 jQuery(document).ready(function($) {
@@ -185,9 +188,11 @@ jQuery(document).ready(function($) {
 				stagePadding: 0,
 		    margin: 20,
 		    autoplay: true,
+			autoplayTimeout: 50000,
+			
 		    autoHeight: true,
 		    nav: true,
-				navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+				navText: ['<span class="icon-arrow_back button-arrow">', '<span class="icon-arrow_forward button-arrow">'],
 		    responsive:{
 	        600:{
 	        	margin: 0,
@@ -332,3 +337,25 @@ jQuery(document).ready(function($) {
   siteScroll();
 
 });
+
+
+// Obtén el botón
+let mybutton = document.getElementById("myBtn");
+
+// Cuando el usuario se desplaza hacia abajo 100px desde la parte superior del documento, muestra el botón
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 900) {
+    mybutton.classList.add("show");
+  } else {
+    mybutton.classList.remove("show");
+  }
+}
+
+// Cuando el usuario hace clic en el botón, desplázate hacia la parte superior del documento
+function topFunction() {
+	$('html, body').animate({
+	  scrollTop: 0
+	}, 1000, 'easeInOutCirc');
+  }
