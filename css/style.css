@@ -2086,6 +2086,11 @@ button:hover{
 
 
 @media (max-width: 991.98px) {
+  .testimony{
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
   .site-half .img-bg-1 {
     position: relative;
     height: 500px;
